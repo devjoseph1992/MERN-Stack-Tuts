@@ -32,7 +32,7 @@ router.post(
     const { firstname, lastname, username, email, password } = req.body;
     try {
       //See if the user exists
-      let user = await User.findOne({ username, email });
+      let user = await User.findOne({ email });
       if (user) {
         return res
           .status(400)
